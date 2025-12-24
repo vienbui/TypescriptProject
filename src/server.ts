@@ -13,6 +13,7 @@ console.log(process.env.PORT);
 import * as express from 'express';
 import { root } from './route/root';
 import { isInteger } from './utils';
+import { logger } from './logger';
 
 const app = express();
 
@@ -44,7 +45,7 @@ function startServer(){
         port = 9000;
     }
     app.listen(port,()=>{
-        console.log(`Server is running on http://localhost:${port}`);
+        logger.info (`Server is running on http://localhost:${port}`);
     })
 }
 
