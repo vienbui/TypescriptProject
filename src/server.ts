@@ -8,23 +8,20 @@ if (result.error) {
     process.exit(1);
 }
 
-// console.log(process.env.PORT);
-
 import "reflect-metadata";
 import * as express from 'express';
 import { root } from './route/root';
 import { isInteger } from './utils';
 import { logger } from './logger';
 import { AppDataSource } from './database/data-source';
+import { getAllCourses } from './route/get-all-courses';
 
 const app = express();
 
 function setupExpress(){
-
-   
     
     app.route("/").get(root);
-
+    app.route("/api/courses").get(getAllCourses);
 
 }
 
