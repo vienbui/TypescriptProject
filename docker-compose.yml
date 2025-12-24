@@ -6,10 +6,10 @@ services:
     container_name: postgres_practicets
     restart: always
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: postgres123
       POSTGRES_DB: practicets
     volumes:
       - postgres_data:/var/lib/postgresql/data
