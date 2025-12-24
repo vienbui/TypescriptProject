@@ -8,12 +8,14 @@ if (result.error) {
     process.exit(1);
 }
 
-console.log(process.env.PORT);
+// console.log(process.env.PORT);
 
+import "reflect-metadata";
 import * as express from 'express';
 import { root } from './route/root';
 import { isInteger } from './utils';
 import { logger } from './logger';
+import { AppDataSource } from './database/data-source';
 
 const app = express();
 
@@ -46,8 +48,22 @@ function startServer(){
     }
     app.listen(port,()=>{
         logger.info (`Server is running on http://localhost:${port}`);
+    
     })
 }
+console.log('DB_PASSWORD =', process.env.DB_PASSWORD);
+        console.log('DB_USERNAME =', process.env.DB_USERNAME);
 
-setupExpress();
-startServer();
+AppDataSource.initialize()
+    .then(()=>{
+        logger.info("Data Source has been initialized!");
+        setupExpress();
+        startServer();
+    
+
+    })
+    .catch((error)=> {
+        logger.error("Error during Data Source initialization", error);
+        
+
+    });

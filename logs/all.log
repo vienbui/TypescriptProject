@@ -1,0 +1,1337 @@
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-23T10:27:21.847Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-23T10:28:47.802Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:34:02.353Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:36:05.116Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:39:33.047Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:39:49.737Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:40:07.388Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 100,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"vbui\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"vbui\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:44:45.206Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 100,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"vbui\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"vbui\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:44:53.634Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 100,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"vbui\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"vbui\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:45:44.314Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 100,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"vbui\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"vbui\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:46:20.070Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 100,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"vbui\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"vbui\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:46:30.185Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 100,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"vbui\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"vbui\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:47:06.894Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 100,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"vbui\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"vbui\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:47:22.344Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 100,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"vbui\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"vbui\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:48:46.360Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:54:48.459Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:55:18.815Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:55:50.768Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:56:01.326Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:56:24.916Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T04:58:31.815Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T05:03:29.908Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T05:05:27.747Z"
+}
+{
+    "code": "28P01",
+    "file": "auth.c",
+    "length": 104,
+    "level": "error",
+    "line": "331",
+    "message": "Error during Data Source initialization password authentication failed for user \"postgres\"",
+    "name": "error",
+    "routine": "auth_failed",
+    "severity": "FATAL",
+    "stack": "error: password authentication failed for user \"postgres\"\n    at Parser.parseErrorMessage (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:285:98)\n    at Parser.handlePacket (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:122:29)\n    at Parser.parse (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/parser.js:35:38)\n    at Socket.<anonymous> (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/pg-protocol/dist/index.js:11:42)\n    at Socket.emit (node:events:517:28)\n    at addChunk (node:internal/streams/readable:368:12)\n    at readableAddChunk (node:internal/streams/readable:341:9)\n    at Readable.push (node:internal/streams/readable:278:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)",
+    "timestamp": "2025-12-24T05:06:26.339Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T05:29:38.459Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T05:29:38.462Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T05:50:27.316Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T05:50:27.319Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T05:52:59.539Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T05:52:59.542Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T05:54:32.347Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T05:54:32.350Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T05:55:56.379Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T05:55:56.382Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T05:57:19.605Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T05:57:19.608Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T06:03:37.334Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T06:03:37.337Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T06:04:01.260Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T06:04:01.262Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T06:15:52.879Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T06:15:52.882Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:01:58.656Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:01:58.658Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:05:00.915Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:05:00.918Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:12:28.644Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:12:28.646Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:15:40.161Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:15:40.163Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:23:14.620Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:23:14.623Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:47:30.916Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:47:30.919Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:48:17.623Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:48:17.625Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:48:30.809Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:48:30.811Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:49:08.519Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:49:08.521Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:49:35.651Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:49:35.653Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:52:24.839Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:52:24.842Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:53:08.745Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:53:08.748Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T07:56:13.939Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T07:56:13.941Z"
+}
+{
+    "level": "info",
+    "message": "Data Source has been initialized!",
+    "timestamp": "2025-12-24T08:03:10.967Z"
+}
+{
+    "level": "info",
+    "message": "Server is running on http://localhost:9000",
+    "timestamp": "2025-12-24T08:03:10.970Z"
+}
+{
+    "level": "info",
+    "message": "Database connection established",
+    "timestamp": "2025-12-24T08:03:53.610Z"
+}
+{
+    "level": "info",
+    "message": "Database connection established",
+    "timestamp": "2025-12-24T08:46:59.621Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Serverless Angular with Firebase Course",
+    "timestamp": "2025-12-24T08:46:59.621Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Development Environment Setup",
+    "timestamp": "2025-12-24T08:46:59.636Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to the Firebase Ecosystem",
+    "timestamp": "2025-12-24T08:46:59.640Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Importing Data into Firestore",
+    "timestamp": "2025-12-24T08:46:59.642Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Firestore Documents in Detail",
+    "timestamp": "2025-12-24T08:46:59.644Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Firestore Collections in Detail",
+    "timestamp": "2025-12-24T08:46:59.646Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Firestore Unique Identifiers",
+    "timestamp": "2025-12-24T08:46:59.648Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Querying Firestore Collections",
+    "timestamp": "2025-12-24T08:46:59.650Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Firebase Security Rules In Detail",
+    "timestamp": "2025-12-24T08:46:59.652Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Firebase Cloud Functions In Detail",
+    "timestamp": "2025-12-24T08:46:59.654Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Firebase Storage In Detail",
+    "timestamp": "2025-12-24T08:46:59.656Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Angular Core Deep Dive",
+    "timestamp": "2025-12-24T08:46:59.664Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course RxJs In Practice Course",
+    "timestamp": "2025-12-24T08:46:59.674Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course NgRx (with NgRx Data) - The Complete Guide",
+    "timestamp": "2025-12-24T08:46:59.681Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Welcome to the Angular Ngrx Course",
+    "timestamp": "2025-12-24T08:46:59.690Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson The Angular Ngrx Architecture Course - Helicopter View",
+    "timestamp": "2025-12-24T08:46:59.692Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson The Origins of Flux - Understanding the Famous Facebook Bug Problem",
+    "timestamp": "2025-12-24T08:46:59.699Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Custom Global Events - Why Don't They Scale In Complexity?",
+    "timestamp": "2025-12-24T08:46:59.701Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson The Flux Architecture - How Does it Solve Facebook Counter Problem?",
+    "timestamp": "2025-12-24T08:46:59.703Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Unidirectional Data Flow And The Angular Development Mode",
+    "timestamp": "2025-12-24T08:46:59.705Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Dispatching an Action - Implementing the Login Component",
+    "timestamp": "2025-12-24T08:46:59.707Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Setting Up the Ngrx DevTools - Demo",
+    "timestamp": "2025-12-24T08:46:59.708Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Understanding Reducers - Writing Our First Reducer",
+    "timestamp": "2025-12-24T08:46:59.709Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson How To Define the Store Initial State",
+    "timestamp": "2025-12-24T08:46:59.711Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Angular for Beginners",
+    "timestamp": "2025-12-24T08:46:59.712Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Angular Tutorial For Beginners - Build Your First App - Hello World Step By Step",
+    "timestamp": "2025-12-24T08:46:59.716Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Building Your First  Component - Component Composition",
+    "timestamp": "2025-12-24T08:46:59.718Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Component @Input - How To Pass Input Data To an  Component",
+    "timestamp": "2025-12-24T08:46:59.720Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson  Component Events - Using @Output to create custom events",
+    "timestamp": "2025-12-24T08:46:59.722Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson  Component Templates - Inline Vs External",
+    "timestamp": "2025-12-24T08:46:59.723Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Styling  Components - Learn About Component Style Isolation",
+    "timestamp": "2025-12-24T08:46:59.724Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson  Component Interaction - Extended Components Example",
+    "timestamp": "2025-12-24T08:46:59.726Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson  Components Tutorial For Beginners - Components Exercise !",
+    "timestamp": "2025-12-24T08:46:59.727Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson  Components Tutorial For Beginners - Components Exercise Solution Inside",
+    "timestamp": "2025-12-24T08:46:59.728Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson  Directives - Inputs, Output Event Emitters and How To Export Template References",
+    "timestamp": "2025-12-24T08:46:59.729Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Angular Security Course - Web Security Fundamentals",
+    "timestamp": "2025-12-24T08:46:59.731Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Course Helicopter View",
+    "timestamp": "2025-12-24T08:46:59.736Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Installing Git, Node, NPM and Choosing an IDE",
+    "timestamp": "2025-12-24T08:46:59.737Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Installing The Lessons Code - Learn Why Its Essential To Use NPM 5",
+    "timestamp": "2025-12-24T08:46:59.739Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson How To Run Node In TypeScript With Hot Reloading",
+    "timestamp": "2025-12-24T08:46:59.740Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Guided Tour Of The Sample Application",
+    "timestamp": "2025-12-24T08:46:59.741Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Client Side Authentication Service - API Design",
+    "timestamp": "2025-12-24T08:46:59.742Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Client Authentication Service - Design and Implementation",
+    "timestamp": "2025-12-24T08:46:59.743Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson The New Angular HTTP Client - Doing a POST Call To The Server",
+    "timestamp": "2025-12-24T08:46:59.744Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson User Sign Up Server-Side Implementation in Express",
+    "timestamp": "2025-12-24T08:46:59.746Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction To Cryptographic Hashes - A Running Demo",
+    "timestamp": "2025-12-24T08:46:59.747Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Some Interesting Properties Of Hashing Functions - Validating Passwords",
+    "timestamp": "2025-12-24T08:46:59.748Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Angular PWA - Progressive Web Apps Course",
+    "timestamp": "2025-12-24T08:46:59.750Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Course Kick-Off - Install Node, NPM, IDE And Service Workers Section Code",
+    "timestamp": "2025-12-24T08:46:59.753Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Service Workers In a Nutshell - Service Worker Registration",
+    "timestamp": "2025-12-24T08:46:59.754Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Service Workers Hello World - Lifecycle Part 1 and PWA Chrome Dev Tools",
+    "timestamp": "2025-12-24T08:46:59.755Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Service Workers and Application Versioning - Install & Activate Lifecycle Phases",
+    "timestamp": "2025-12-24T08:46:59.756Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Downloading The Offline Page - The Service Worker Installation Phase",
+    "timestamp": "2025-12-24T08:46:59.758Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to the Cache Storage PWA API",
+    "timestamp": "2025-12-24T08:46:59.759Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson View Service Workers HTTP Interception Features In Action",
+    "timestamp": "2025-12-24T08:46:59.760Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Service Workers Error Handling - Serving The Offline Page",
+    "timestamp": "2025-12-24T08:46:59.761Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Angular Advanced Library Laboratory: Build Your Own Library",
+    "timestamp": "2025-12-24T08:46:59.763Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Angular Material Course",
+    "timestamp": "2025-12-24T08:46:59.764Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to Angular Material",
+    "timestamp": "2025-12-24T08:46:59.768Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Navigation and Containers",
+    "timestamp": "2025-12-24T08:46:59.770Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Data Tables",
+    "timestamp": "2025-12-24T08:46:59.771Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Dialogs",
+    "timestamp": "2025-12-24T08:46:59.772Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Commonly used Form Controls",
+    "timestamp": "2025-12-24T08:46:59.773Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Drag and Drop",
+    "timestamp": "2025-12-24T08:46:59.774Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Responsive Design",
+    "timestamp": "2025-12-24T08:46:59.776Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Tree Component",
+    "timestamp": "2025-12-24T08:46:59.777Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Virtual Scrolling",
+    "timestamp": "2025-12-24T08:46:59.778Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Custom Themes",
+    "timestamp": "2025-12-24T08:46:59.779Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Changing Theme at Runtime",
+    "timestamp": "2025-12-24T08:46:59.780Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Angular Testing Course",
+    "timestamp": "2025-12-24T08:46:59.782Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Angular Testing Course - Helicopter View",
+    "timestamp": "2025-12-24T08:46:59.785Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Setting Up the Development Environment",
+    "timestamp": "2025-12-24T08:46:59.786Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to Jasmine, Spies and specs",
+    "timestamp": "2025-12-24T08:46:59.787Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to Service Testing",
+    "timestamp": "2025-12-24T08:46:59.789Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Settting up the Angular TestBed",
+    "timestamp": "2025-12-24T08:46:59.790Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Mocking Angular HTTP requests",
+    "timestamp": "2025-12-24T08:46:59.791Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Simulating Failing HTTP Requests",
+    "timestamp": "2025-12-24T08:46:59.792Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to Angular Component Testing",
+    "timestamp": "2025-12-24T08:46:59.793Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Testing Angular Components without the DOM",
+    "timestamp": "2025-12-24T08:46:59.794Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Testing Angular Components with the DOM",
+    "timestamp": "2025-12-24T08:46:59.795Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course NestJs In Practice (with MongoDB)",
+    "timestamp": "2025-12-24T08:46:59.797Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to NestJs",
+    "timestamp": "2025-12-24T08:46:59.800Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Development Environment Setup",
+    "timestamp": "2025-12-24T08:46:59.801Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Setting up a MongoDB Database",
+    "timestamp": "2025-12-24T08:46:59.802Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson CRUD with NestJs - Controllers and Repositories",
+    "timestamp": "2025-12-24T08:46:59.803Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson First REST endpoint - Get All Courses",
+    "timestamp": "2025-12-24T08:46:59.804Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Error Handling",
+    "timestamp": "2025-12-24T08:46:59.805Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson NestJs Middleware",
+    "timestamp": "2025-12-24T08:46:59.806Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Authentication in NestJs",
+    "timestamp": "2025-12-24T08:46:59.807Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Authorization in NestJs",
+    "timestamp": "2025-12-24T08:46:59.808Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Guards & Interceptors",
+    "timestamp": "2025-12-24T08:46:59.810Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Stripe Payments In Practice",
+    "timestamp": "2025-12-24T08:46:59.811Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to Stripe Payments",
+    "timestamp": "2025-12-24T08:46:59.814Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson The advantages of Stripe Checkout",
+    "timestamp": "2025-12-24T08:46:59.815Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Setting up the development environment",
+    "timestamp": "2025-12-24T08:46:59.816Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Creating a server Checkout Session",
+    "timestamp": "2025-12-24T08:46:59.817Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Redirecting to the Stripe Checkout page",
+    "timestamp": "2025-12-24T08:46:59.818Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Order fulfillment webhook",
+    "timestamp": "2025-12-24T08:46:59.819Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Installing the Stripe CLI",
+    "timestamp": "2025-12-24T08:46:59.820Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Firestore Security Rules for protecting Premium content",
+    "timestamp": "2025-12-24T08:46:59.821Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Stripe Subscriptions with Stripe Checkout",
+    "timestamp": "2025-12-24T08:46:59.822Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Stripe Subscription Fulfillment",
+    "timestamp": "2025-12-24T08:46:59.824Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Reactive Angular Course",
+    "timestamp": "2025-12-24T08:46:59.825Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to Reactive Programming",
+    "timestamp": "2025-12-24T08:46:59.828Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Introduction to RxJs",
+    "timestamp": "2025-12-24T08:46:59.829Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Setting up the development environment",
+    "timestamp": "2025-12-24T08:46:59.831Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Designing and building a Service Layer",
+    "timestamp": "2025-12-24T08:46:59.832Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Stateless Observable Services",
+    "timestamp": "2025-12-24T08:46:59.833Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Smart vs Presentational Components",
+    "timestamp": "2025-12-24T08:46:59.834Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Lightweight state management",
+    "timestamp": "2025-12-24T08:46:59.835Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Event bubbling anti-pattern",
+    "timestamp": "2025-12-24T08:46:59.837Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Master detail with cached master table",
+    "timestamp": "2025-12-24T08:46:59.838Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Error handling",
+    "timestamp": "2025-12-24T08:46:59.839Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Angular Router In Depth",
+    "timestamp": "2025-12-24T08:46:59.841Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson What is a Single Page Application?",
+    "timestamp": "2025-12-24T08:46:59.846Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Setting Up The Development Environment",
+    "timestamp": "2025-12-24T08:46:59.847Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Angular Router Setup",
+    "timestamp": "2025-12-24T08:46:59.848Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Configuring a Home Route and Fallback Route",
+    "timestamp": "2025-12-24T08:46:59.849Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Styling Active Routes With The routerLinkActive And routerLinkActiveOptions",
+    "timestamp": "2025-12-24T08:46:59.850Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Child Routes - How To Setup a Master Detail Route",
+    "timestamp": "2025-12-24T08:46:59.851Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Programmatic Router Navigation via the Router API ",
+    "timestamp": "2025-12-24T08:46:59.852Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Relative And Absolute Router Navigation",
+    "timestamp": "2025-12-24T08:46:59.853Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Master Detail Navigation And Route Parameters",
+    "timestamp": "2025-12-24T08:46:59.854Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson The Route Parameters Observable",
+    "timestamp": "2025-12-24T08:46:59.855Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Optional Route Query Parameters",
+    "timestamp": "2025-12-24T08:46:59.856Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson The queryParams Directive and the Query Parameters Observable",
+    "timestamp": "2025-12-24T08:46:59.857Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Exiting an Angular Route - How To Prevent Memory Leaks",
+    "timestamp": "2025-12-24T08:46:59.858Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson CanDeactivate Route Guard",
+    "timestamp": "2025-12-24T08:46:59.859Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson CanActivate Route Guard - An Example of An Asynchronous Route Guard",
+    "timestamp": "2025-12-24T08:46:59.860Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Configure Auxiliary Routes in the Angular Router",
+    "timestamp": "2025-12-24T08:46:59.861Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Angular Auxiliary Routes - How To Pass Router Parameters",
+    "timestamp": "2025-12-24T08:46:59.862Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Angular Router Redirects and Path Matching",
+    "timestamp": "2025-12-24T08:46:59.864Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Angular Router Hash Location Strategy",
+    "timestamp": "2025-12-24T08:46:59.865Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Angular Router Lazy Loading and Shared Modules",
+    "timestamp": "2025-12-24T08:46:59.866Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Exercise - Implement a Widget Dashboard",
+    "timestamp": "2025-12-24T08:46:59.867Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Exercise Solution ",
+    "timestamp": "2025-12-24T08:46:59.868Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Angular Forms In Depth",
+    "timestamp": "2025-12-24T08:46:59.869Z"
+}
+{
+    "level": "info",
+    "message": "Inserted course Typescript Bootcamp",
+    "timestamp": "2025-12-24T08:46:59.870Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Setting Up the Development Environment",
+    "timestamp": "2025-12-24T08:46:59.873Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Why Typescript? Key Benefits of the Language",
+    "timestamp": "2025-12-24T08:46:59.875Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Compiling Your First Typescript Program",
+    "timestamp": "2025-12-24T08:46:59.875Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson The Typescript compiler noEmitOnError flag",
+    "timestamp": "2025-12-24T08:46:59.877Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Running a Typescript Program in a Browser",
+    "timestamp": "2025-12-24T08:46:59.878Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Understanding the differences between const, let and var",
+    "timestamp": "2025-12-24T08:46:59.879Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Typescript primitive types - numbers, strings and booleans",
+    "timestamp": "2025-12-24T08:46:59.880Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Typescript Template Strings",
+    "timestamp": "2025-12-24T08:46:59.882Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson Understanding Type Inference",
+    "timestamp": "2025-12-24T08:46:59.883Z"
+}
+{
+    "level": "info",
+    "message": "Inserted lesson When to use Typescript Type Annotations and Why",
+    "timestamp": "2025-12-24T08:46:59.884Z"
+}
+{
+    "level": "info",
+    "message": "Total courses inserted: 16",
+    "timestamp": "2025-12-24T08:46:59.886Z"
+}
+{
+    "level": "info",
+    "message": "Database connection established",
+    "timestamp": "2025-12-24T10:37:55.526Z"
+}
+{
+    "level": "info",
+    "message": "Database connection established",
+    "timestamp": "2025-12-24T10:40:25.378Z"
+}
+{
+    "level": "info",
+    "message": "Delete data in LESSONS table",
+    "timestamp": "2025-12-24T10:40:25.379Z"
+}
+{
+    "level": "info",
+    "message": "Delete data in COURSES table",
+    "timestamp": "2025-12-24T10:40:25.385Z"
+}
+{
+    "code": "0A000",
+    "detail": "Table \"LESSONS\" references \"COURSES\".",
+    "driverError": {
+        "code": "0A000",
+        "detail": "Table \"LESSONS\" references \"COURSES\".",
+        "file": "heap.c",
+        "hint": "Truncate table \"LESSONS\" at the same time, or use TRUNCATE ... CASCADE.",
+        "length": 241,
+        "line": "3216",
+        "name": "error",
+        "routine": "heap_truncate_check_FKs",
+        "severity": "ERROR"
+    },
+    "file": "heap.c",
+    "hint": "Truncate table \"LESSONS\" at the same time, or use TRUNCATE ... CASCADE.",
+    "length": 241,
+    "level": "error",
+    "line": "3216",
+    "message": "Error deleting database cannot truncate a table referenced in a foreign key constraint",
+    "query": "TRUNCATE TABLE \"COURSES\"",
+    "routine": "heap_truncate_check_FKs",
+    "severity": "ERROR",
+    "stack": "QueryFailedError: cannot truncate a table referenced in a foreign key constraint\n    at PostgresQueryRunner.query (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryRunner.clearTable (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:1593:9)\n    at async EntityManager.clear (/Users/vbui/Documents/QE_repo/PracticeTS/node_modules/typeorm/entity-manager/EntityManager.js:697:20)",
+    "timestamp": "2025-12-24T10:40:25.387Z"
+}
+{
+    "level": "info",
+    "message": "Database connection established",
+    "timestamp": "2025-12-24T10:43:36.815Z"
+}
+{
+    "level": "info",
+    "message": "Database has been deleted successfully",
+    "timestamp": "2025-12-24T10:43:36.819Z"
+}
