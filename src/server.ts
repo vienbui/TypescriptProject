@@ -20,18 +20,26 @@ import { findCourseById } from './route/find-course-by-id';
 import { globalErrorHandler } from './middlewares/default-error-handler';
 import {findLessonsForCourse} from './route/find-lesson-for-course';
 import {getAllCoursesWithLessons} from './route/get-all-courses-with-lessons'
+import { updateCourse } from './route/update-course';
 
+// const cors = require ("cors")
+
+const bodyParser = require ("body-parser")
 
 const app = express();
 
 function setupExpress(){
     
+    app.use(bodyParser.json());
+
     app.route("/").get(root);
     app.route("/api/courses").get(getAllCourses);
     app.route("/api/courses-include-lessons").get(getAllCoursesWithLessons);
     app.route("/api/courses/url/:courseUrl").get(findCourseByUrl);
     app.route("/api/courses/id/:courseId").get(findCourseById);
     app.route("/api/courses/id/:courseId/lessons").get(findLessonsForCourse);
+
+    app.route("/api/courses/id/:courseId").patch(updateCourse);
 
     app.use(globalErrorHandler);
 
