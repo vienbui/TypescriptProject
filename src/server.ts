@@ -18,6 +18,7 @@ import { getAllCourses } from './route/get-all-courses';
 import  {findCourseByUrl} from './route/find-course-by-url'
 import { findCourseById } from './route/find-course-by-id';
 import { globalErrorHandler } from './middlewares/default-error-handler';
+import {findLessonsForCourse} from './route/find-lesson-for-course';
 
 
 const app = express();
@@ -28,6 +29,7 @@ function setupExpress(){
     app.route("/api/courses").get(getAllCourses);
     app.route("/api/courses/url/:courseUrl").get(findCourseByUrl);
     app.route("/api/courses/id/:courseId").get(findCourseById);
+    app.route("/api/courses/id/:courseId/lessons").get(findLessonsForCourse);
 
     app.use(globalErrorHandler);
 
