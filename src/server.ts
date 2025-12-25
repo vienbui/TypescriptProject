@@ -17,7 +17,8 @@ import { AppDataSource } from './database/data-source';
 import { getAllCourses } from './route/get-all-courses';
 import  {findCourseByUrl} from './route/find-course-by-url'
 import { findCourseById } from './route/find-course-by-id';
-// import {defaultErrorHandler} from './middlewares/default-error-handler'; 
+import { globalErrorHandler } from './middlewares/default-error-handler';
+
 
 const app = express();
 
@@ -27,7 +28,8 @@ function setupExpress(){
     app.route("/api/courses").get(getAllCourses);
     app.route("/api/courses/url/:courseUrl").get(findCourseByUrl);
     app.route("/api/courses/id/:courseId").get(findCourseById);
-    // app.use(defaultErrorHandler);
+
+    app.use(globalErrorHandler);
 
 }
 

@@ -12,7 +12,7 @@ try {
     const courseUrl = request.params.courseUrl;
 
     if (!courseUrl){
-        throw `Course does not exist`
+        throw new Error (`Course does not exist`)
     }
 
     const course = await AppDataSource
