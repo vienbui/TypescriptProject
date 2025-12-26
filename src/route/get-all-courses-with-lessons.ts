@@ -7,15 +7,19 @@ import { Lesson } from '../entitites/lesson';
 export async function getAllCoursesWithLessons(request: Request, response: Response, next: NextFunction) {
 
 try {
-    logger.debug("getAllCourses called");
+    logger.debug("getAllCourses with lessons called");
 
     const courses = await AppDataSource
         .getRepository(Course)
         .find({
-        relations: {
-          lessons: true
-        }
-      });
+            order: {
+            seqNo: "DESC",
+            },
+            relations: {
+            lessons: true
+            }
+        })
+        
     
     const totalCourses = await AppDataSource
             .getRepository('Course')
