@@ -1,4 +1,3 @@
-
 import * as dotenv from 'dotenv';
 
 const result = dotenv.config();
@@ -11,6 +10,9 @@ import { log } from 'winston';
 import { DeepPartial } from 'typeorm';
 import { Course } from '../entitites/course';
 import { Lesson } from '../entitites/lesson';
+import {USERS} from "./db-data"
+import { User } from '../entitites/user';
+
 
 async function populateDB(){
 
@@ -41,13 +43,35 @@ async function populateDB(){
         }
     }
 
+    const users = Object.values(USERS) as any[];
+
+    for (let userData of users){
+        console.log(`Inserting user: ${userData}`)
+        
+        const {email, pictureUrl, isAdmin, passwordSalt, plainTextPassword} = userData
+
+        const user = AppDataSource
+        .getRepository(User)
+        .create({
+            email,
+            pictureUrl,
+            isAdmin,
+            passwordSalt,
+            passwordHash: await calculatePasswordHash (plainTextPassword, passwordSalt)
+
+        })
+        await AppDataSource.manager.save(user);
+    }
+
     const totalCourses = await courseRepository.createQueryBuilder("course").getCount();
     const totalLessons = await lessonRepository.createQueryBuilder("lesson").getCount();
 
     logger.info (`Total courses inserted: ${totalCourses}`);
     logger.info (`Total lessons inserted: ${totalLessons}`);
     
+    
 }
+import { calculatePasswordHash } from '../utils';
 
 populateDB()
     .then(() => {
@@ -55,6 +79,6 @@ populateDB()
         process.exit(0);
     })
     .catch((error)=>{
-        console.error("Error populating database", error);
+        logger.error("Error populating database", error);
         process.exit(1);
     })
