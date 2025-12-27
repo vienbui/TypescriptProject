@@ -9,8 +9,6 @@ const crypto = require("crypto");
 export async function createUser(request: Request, response: Response, next: NextFunction) {
 
 try {
-    logger.debug("RAW request.body =", request.body);
-
     const { email, pictureUrl, password,  isAdmin } = request.body;
 
     logger.debug("create User() called");       
