@@ -24,6 +24,7 @@ import { updateCourse } from './route/update-course';
 import { createCourse } from './route/create-course';
 import { deleteCourseAndItsLessons } from './route/delete-course';
 import { createLessonForCourse } from './route/create-lesson-for-course';
+import { createUser } from './route/create-user';
 
 
 // const cors = require ("cors")
@@ -35,6 +36,7 @@ const app = express();
 function setupExpress(){
     
     app.use(bodyParser.json());
+    app.use(express())
 
     app.route("/").get(root);
 
@@ -55,6 +57,8 @@ function setupExpress(){
     app.route("/api/courses/id/:courseId/lessons").post(createLessonForCourse);
 
     app.route("/api/courses/id/:courseId").delete(deleteCourseAndItsLessons);
+
+    app.route("/api/users").post(createUser)
 
     app.use(globalErrorHandler);
 
