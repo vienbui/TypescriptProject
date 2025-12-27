@@ -2,6 +2,7 @@ import { DataSource } from "typeorm";
 import { Logger } from "winston";
 import { Course } from "../entitites/course";
 import { Lesson } from "../entitites/lesson";
+import { User } from "../entitites/user";
 
 
 export const AppDataSource = new DataSource ({
@@ -14,7 +15,8 @@ export const AppDataSource = new DataSource ({
 
     entities:[
         Course,
-        Lesson
+        Lesson,
+        User
     ],
     synchronize: true,
     logging:true

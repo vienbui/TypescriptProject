@@ -7,6 +7,8 @@ import { logger } from '../logger';
 import { AppDataSource } from './data-source';
 import { Lesson } from '../entitites/lesson';
 import { Course } from '../entitites/course';
+import { USERS } from './db-data';
+import { User } from '../entitites/user';
 
 async function deleteDB(){
 
@@ -23,18 +25,26 @@ async function deleteDB(){
     // logger.info("Delete data in COURSES table");
     // await AppDataSource.getRepository(Course).clear()
 
+    logger.info("Delete data in LESSONS table");
     await AppDataSource
-  .createQueryBuilder()
-  .delete()
-  .from(Lesson)
-  .execute();
+            .createQueryBuilder()
+            .delete()
+            .from(Lesson)
+            .execute();
 
-await AppDataSource
-  .createQueryBuilder()
-  .delete()
-  .from(Course)
-  .execute();
-   
+    logger.info("Delete data in COURSES table");
+    await AppDataSource
+            .createQueryBuilder()
+            .delete()
+            .from(Course)
+            .execute();
+
+   logger.info("Delete data in USERS table");
+    await AppDataSource
+            .createQueryBuilder()
+            .delete()
+            .from(User)
+            .execute();
 
 }
 
