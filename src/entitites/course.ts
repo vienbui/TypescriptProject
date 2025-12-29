@@ -16,7 +16,6 @@ export class Course {
     @Column()
     url: string;
 
-
     @Column()
     title: string;
 

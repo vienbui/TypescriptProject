@@ -4,8 +4,8 @@ import { randomBytes } from 'crypto';
 
 export const randomBytesAsync = promisify(randomBytes);
 
-const crypto = require('crypto');
-const util = require('util');
+const crypto = require("crypto");
+const util = require("util");
 
 const hashPassword = util.promisify(crypto.pbkdf2)
 
