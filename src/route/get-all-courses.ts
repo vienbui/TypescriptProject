@@ -3,9 +3,9 @@ import { logger } from '../logger';
 import { AppDataSource } from '../database/data-source';
 
 export async function getAllCourses(request: Request, response: Response, next: NextFunction) {
-
+    console.log(">>> getAllCourses HIT");
 try {
-    logger.debug("getAllCourses called");
+    logger.debug("getAllCourses called", request["user"]);
 
     const courses = await AppDataSource
         .getRepository('Course')

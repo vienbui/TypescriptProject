@@ -2,7 +2,6 @@ import {NextFunction, Request, Response} from 'express';
 import { logger } from '../logger';
 import { AppDataSource } from '../database/data-source';
 import {Course} from '../entitites/course';
-import { Lesson } from '../entitites/lesson';
 
 export async function createCourse(request: Request, response: Response, next: NextFunction) {
 

@@ -25,6 +25,9 @@ import { createCourse } from './route/create-course';
 import { deleteCourseAndItsLessons } from './route/delete-course';
 import { createLessonForCourse } from './route/create-lesson-for-course';
 import { createUser } from './route/create-user';
+import { login } from './route/login';
+import { checkIfAuthenticated } from './middlewares/authentication-middleware';
+import { checkIfAdmin } from './middlewares/authentication-admin-only-middleware';
 
 
 // const cors = require ("cors")
@@ -40,25 +43,27 @@ function setupExpress(){
 
     app.route("/").get(root);
 
-    app.route("/api/courses").get(getAllCourses);
+    app.route("/api/courses").get(checkIfAuthenticated, getAllCourses);
 
-    app.route("/api/courses-include-lessons").get(getAllCoursesWithLessons);
+    app.route("/api/courses-include-lessons").get(checkIfAuthenticated,getAllCoursesWithLessons);
 
-    app.route("/api/courses/url/:courseUrl").get(findCourseByUrl);
+    app.route("/api/courses/url/:courseUrl").get(checkIfAuthenticated,findCourseByUrl);
 
-    app.route("/api/courses/id/:courseId").get(findCourseById);
+    app.route("/api/courses/id/:courseId").get(checkIfAuthenticated,findCourseById);
 
-    app.route("/api/courses/id/:courseId/lessons").get(findLessonsForCourse);
+    app.route("/api/courses/id/:courseId/lessons").get(checkIfAuthenticated,findLessonsForCourse);
 
-    app.route("/api/courses/id/:courseId").patch(updateCourse);
+    app.route("/api/courses/id/:courseId").patch(checkIfAuthenticated,updateCourse);
 
-    app.route("/api/courses").post(createCourse);
+    app.route("/api/courses").post(checkIfAuthenticated,createCourse);
 
-    app.route("/api/courses/id/:courseId/lessons").post(createLessonForCourse);
+    app.route("/api/courses/id/:courseId/lessons").post(checkIfAuthenticated,createLessonForCourse);
 
-    app.route("/api/courses/id/:courseId").delete(deleteCourseAndItsLessons);
+    app.route("/api/courses/id/:courseId").delete(checkIfAuthenticated,deleteCourseAndItsLessons);
 
-    app.route("/api/users").post(createUser)
+    app.route("/api/users").post(checkIfAuthenticated, checkIfAdmin,createUser)
+
+    app.route("/api/login").post(login);
 
     app.use(globalErrorHandler);
 
