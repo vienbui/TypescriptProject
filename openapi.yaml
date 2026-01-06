@@ -1,0 +1,985 @@
+openapi: 3.0.3
+info:
+  title: Course Management API
+  description: |
+    RESTful backend service for managing educational courses and their associated lessons.
+    
+    ## Features
+    - User authentication via JWT tokens
+    - CRUD operations for courses
+    - CRUD operations for lessons within courses
+    - Role-based access control (Admin vs Regular Users)
+    - Secure password handling with salt-based hashing
+    
+    ## Authentication
+    All endpoints except `/api/login` require JWT Bearer token authentication.
+    Include the token in the `Authorization` header as `Bearer <token>`.
+    
+    ## Test Accounts
+    | Role | Email | Password |
+    |------|-------|----------|
+    | Regular User | test@angular-university.io | test |
+    | Admin | admin@angular-university.io | admin |
+  version: 1.0.0
+  contact:
+    name: API Support
+  license:
+    name: MIT
+
+servers:
+  - url: http://localhost:9000
+    description: Local development server
+  - url: http://localhost:9000
+    description: Docker development server
+
+tags:
+  - name: Authentication
+    description: User authentication endpoints
+  - name: Courses
+    description: Course management endpoints
+  - name: Lessons
+    description: Lesson management endpoints
+  - name: Users
+    description: User management endpoints (Admin only)
+
+paths:
+  /api/login:
+    post:
+      tags:
+        - Authentication
+      summary: Login
+      description: Authenticate user and receive JWT token
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+            examples:
+              regularUser:
+                summary: Regular user login
+                value:
+                  email: test@angular-university.io
+                  password: test
+              adminUser:
+                summary: Admin user login
+                value:
+                  email: admin@angular-university.io
+                  password: admin
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+              example:
+                user:
+                  email: test@angular-university.io
+                  pictureUrl: https://example.com/avatar.png
+                  isAdmin: false
+                authJwtToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        '400':
+          description: Validation error - Missing email or password
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                missingEmail:
+                  summary: Missing email
+                  value:
+                    status: fail
+                    message: Email is required
+                missingPassword:
+                  summary: Missing password
+                  value:
+                    status: fail
+                    message: Password is required
+        '403':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                status: fail
+                message: Invalid email or password. Login denied with email user@example.com.
+
+  /api/courses:
+    get:
+      tags:
+        - Courses
+      summary: Get all courses
+      description: Retrieve list of all courses sorted by sequence number (descending)
+      operationId: getAllCourses
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoursesListResponse'
+              example:
+                courses:
+                  - id: 1
+                    seqNo: 10
+                    url: typescript-bootcamp
+                    title: Typescript Bootcamp
+                    iconUrl: https://example.com/icon.jpg
+                    longDescription: Learn TypeScript in depth...
+                    category: BEGINNER
+                    createdAt: '2024-01-15T10:30:00.000Z'
+                    lastUpdatedAt: '2024-01-15T10:30:00.000Z'
+                totalCourses: 1
+        '403':
+          description: Unauthorized - Invalid or missing JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+    post:
+      tags:
+        - Courses
+      summary: Create a new course
+      description: Create a new course with auto-incremented sequence number
+      operationId: createCourse
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCourseRequest'
+            example:
+              title: TypeScript Fundamentals
+              url: typescript-fundamentals
+              iconUrl: https://example.com/icon.png
+              longDescription: Learn TypeScript from scratch
+              category: BEGINNER
+      responses:
+        '201':
+          description: Course created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateCourseResponse'
+              example:
+                savedCourse:
+                  id: 2
+                  seqNo: 11
+                  url: typescript-fundamentals
+                  title: TypeScript Fundamentals
+                  iconUrl: https://example.com/icon.png
+                  longDescription: Learn TypeScript from scratch
+                  category: BEGINNER
+                  createdAt: '2024-01-15T10:30:00.000Z'
+                  lastUpdatedAt: '2024-01-15T10:30:00.000Z'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Unauthorized - Invalid or missing JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/courses-include-lessons:
+    get:
+      tags:
+        - Courses
+      summary: Get all courses with lessons
+      description: Retrieve courses with their associated lessons eagerly loaded
+      operationId: getAllCoursesWithLessons
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoursesWithLessonsResponse'
+              example:
+                courses:
+                  - id: 1
+                    seqNo: 10
+                    url: typescript-bootcamp
+                    title: Typescript Bootcamp
+                    iconUrl: https://example.com/icon.jpg
+                    longDescription: Learn TypeScript in depth...
+                    category: BEGINNER
+                    lessons:
+                      - id: 1
+                        title: Introduction
+                        duration: '10:30'
+                        seqNo: 1
+                        createdAt: '2024-01-15T10:30:00.000Z'
+                        lastUpdatedAt: '2024-01-15T10:30:00.000Z'
+                    createdAt: '2024-01-15T10:30:00.000Z'
+                    lastUpdatedAt: '2024-01-15T10:30:00.000Z'
+                totalCourses: 1
+                totalLessons: 1
+        '403':
+          description: Unauthorized - Invalid or missing JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  /api/courses/id/{courseId}:
+    get:
+      tags:
+        - Courses
+      summary: Get course by ID
+      description: Retrieve a specific course by its numeric ID
+      operationId: getCourseById
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          description: The course ID
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseDetailResponse'
+              example:
+                course:
+                  id: 1
+                  seqNo: 10
+                  url: typescript-bootcamp
+                  title: Typescript Bootcamp
+                  iconUrl: https://example.com/icon.jpg
+                  longDescription: Learn TypeScript in depth...
+                  category: BEGINNER
+                  createdAt: '2024-01-15T10:30:00.000Z'
+                  lastUpdatedAt: '2024-01-15T10:30:00.000Z'
+                totalLessons: 5
+        '403':
+          description: Unauthorized - Invalid or missing JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Course not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+              example:
+                message: Could not find a course with id 999
+
+    patch:
+      tags:
+        - Courses
+      summary: Update course
+      description: Partially update an existing course
+      operationId: updateCourse
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          description: The course ID
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCourseRequest'
+            example:
+              title: Updated Course Title
+              category: ADVANCED
+      responses:
+        '200':
+          description: Course updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateCourseResponse'
+              example:
+                message: Course 1 was updated successful
+        '400':
+          description: Validation error - Invalid courseId
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Unauthorized - Invalid or missing JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      tags:
+        - Courses
+      summary: Delete course
+      description: Delete a course and all its associated lessons
+      operationId: deleteCourse
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          description: The course ID
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Course deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteCourseResponse'
+              example:
+                message: Course 1 was deleted successfully
+        '400':
+          description: Validation error - Invalid courseId
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Unauthorized - Invalid or missing JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/courses/url/{courseUrl}:
+    get:
+      tags:
+        - Courses
+      summary: Get course by URL
+      description: Retrieve a specific course by its URL slug
+      operationId: getCourseByUrl
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: courseUrl
+          in: path
+          required: true
+          description: The course URL slug
+          schema:
+            type: string
+            example: typescript-bootcamp
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseDetailResponse'
+              example:
+                course:
+                  id: 1
+                  seqNo: 10
+                  url: typescript-bootcamp
+                  title: Typescript Bootcamp
+                  iconUrl: https://example.com/icon.jpg
+                  longDescription: Learn TypeScript in depth...
+                  category: BEGINNER
+                  createdAt: '2024-01-15T10:30:00.000Z'
+                  lastUpdatedAt: '2024-01-15T10:30:00.000Z'
+                totalLessons: 5
+        '403':
+          description: Unauthorized - Invalid or missing JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Course not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+              example:
+                message: Could not find a course with url invalid-url
+
+  /api/courses/id/{courseId}/lessons:
+    get:
+      tags:
+        - Lessons
+      summary: Get lessons for course
+      description: Retrieve paginated lessons for a specific course
+      operationId: getLessonsForCourse
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          description: The course ID
+          schema:
+            type: integer
+            example: 1
+        - name: pageNumber
+          in: query
+          required: false
+          description: Page number (0-indexed)
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+            example: 0
+        - name: pageSize
+          in: query
+          required: false
+          description: Number of lessons per page
+          schema:
+            type: integer
+            default: 3
+            minimum: 1
+            example: 3
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LessonsListResponse'
+              example:
+                lessons:
+                  - id: 1
+                    title: Introduction to TypeScript
+                    duration: '10:30'
+                    seqNo: 1
+                    createdAt: '2024-01-15T10:30:00.000Z'
+                    lastUpdatedAt: '2024-01-15T10:30:00.000Z'
+                  - id: 2
+                    title: Setting Up the Environment
+                    duration: '08:15'
+                    seqNo: 2
+                    createdAt: '2024-01-15T10:30:00.000Z'
+                    lastUpdatedAt: '2024-01-15T10:30:00.000Z'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Unauthorized - Invalid or missing JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    post:
+      tags:
+        - Lessons
+      summary: Create lesson for course
+      description: Create a new lesson within a course
+      operationId: createLessonForCourse
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          description: The course ID
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLessonRequest'
+            example:
+              title: Advanced TypeScript Features
+              duration: '15:45'
+      responses:
+        '201':
+          description: Lesson created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateLessonResponse'
+              example:
+                lesson:
+                  id: 3
+                  title: Advanced TypeScript Features
+                  duration: '15:45'
+                  seqNo: 3
+                  createdAt: '2024-01-15T10:30:00.000Z'
+                  lastUpdatedAt: '2024-01-15T10:30:00.000Z'
+        '403':
+          description: Unauthorized - Invalid or missing JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Course not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              example:
+                error: Course 999 not found
+
+  /api/users:
+    post:
+      tags:
+        - Users
+      summary: Create user (Admin only)
+      description: Create a new user account. Requires admin privileges.
+      operationId: createUser
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+            example:
+              email: newuser@example.com
+              password: securePassword123
+              pictureUrl: https://example.com/avatar.png
+              isAdmin: false
+      responses:
+        '200':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateUserResponse'
+              example:
+                email: newuser@example.com
+                pictureUrl: https://example.com/avatar.png
+                isAdmin: false
+        '400':
+          description: Validation error - Missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                missingEmail:
+                  summary: Missing email
+                  value:
+                    status: fail
+                    message: Could not extract the email from the request
+                missingPassword:
+                  summary: Missing password
+                  value:
+                    status: fail
+                    message: Could not extract the password from the request
+        '403':
+          description: Forbidden - Not an admin user or invalid token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '409':
+          description: Conflict - User already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                status: fail
+                message: User with email newuser@example.com already exists
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token obtained from /api/login endpoint
+
+  schemas:
+    # Request Schemas
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          description: User's email address
+          example: test@angular-university.io
+        password:
+          type: string
+          format: password
+          description: User's password
+          example: test
+
+    CreateCourseRequest:
+      type: object
+      required:
+        - title
+        - url
+      properties:
+        title:
+          type: string
+          description: Course title
+          example: TypeScript Fundamentals
+        url:
+          type: string
+          description: URL slug for the course
+          example: typescript-fundamentals
+        iconUrl:
+          type: string
+          description: URL to the course icon
+          example: https://example.com/icon.png
+        longDescription:
+          type: string
+          description: Detailed course description
+          example: Learn TypeScript from scratch
+        category:
+          type: string
+          description: Course category
+          enum:
+            - BEGINNER
+            - INTERMEDIATE
+            - ADVANCED
+          example: BEGINNER
+
+    UpdateCourseRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Course title
+          example: Updated Course Title
+        url:
+          type: string
+          description: URL slug for the course
+          example: updated-course-url
+        iconUrl:
+          type: string
+          description: URL to the course icon
+          example: https://example.com/new-icon.png
+        longDescription:
+          type: string
+          description: Detailed course description
+          example: Updated course description
+        category:
+          type: string
+          description: Course category
+          enum:
+            - BEGINNER
+            - INTERMEDIATE
+            - ADVANCED
+          example: ADVANCED
+
+    CreateLessonRequest:
+      type: object
+      required:
+        - title
+      properties:
+        title:
+          type: string
+          description: Lesson title
+          example: Advanced TypeScript Features
+        duration:
+          type: string
+          description: Lesson duration in mm:ss format
+          example: '15:45'
+
+    CreateUserRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          description: User's email address
+          example: newuser@example.com
+        password:
+          type: string
+          format: password
+          description: User's password
+          example: securePassword123
+        pictureUrl:
+          type: string
+          description: URL to user's profile picture
+          example: https://example.com/avatar.png
+        isAdmin:
+          type: boolean
+          description: Whether the user has admin privileges
+          default: false
+          example: false
+
+    # Response Schemas
+    LoginResponse:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/UserInfo'
+        authJwtToken:
+          type: string
+          description: JWT token for authentication
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+    CoursesListResponse:
+      type: object
+      properties:
+        courses:
+          type: array
+          items:
+            $ref: '#/components/schemas/Course'
+        totalCourses:
+          type: integer
+          description: Total number of courses
+          example: 10
+
+    CoursesWithLessonsResponse:
+      type: object
+      properties:
+        courses:
+          type: array
+          items:
+            $ref: '#/components/schemas/CourseWithLessons'
+        totalCourses:
+          type: integer
+          description: Total number of courses
+          example: 10
+        totalLessons:
+          type: integer
+          description: Total number of lessons across all courses
+          example: 50
+
+    CourseDetailResponse:
+      type: object
+      properties:
+        course:
+          $ref: '#/components/schemas/Course'
+        totalLessons:
+          type: integer
+          description: Total number of lessons in this course
+          example: 5
+
+    CreateCourseResponse:
+      type: object
+      properties:
+        savedCourse:
+          $ref: '#/components/schemas/Course'
+
+    UpdateCourseResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Course 1 was updated successful
+
+    DeleteCourseResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Course 1 was deleted successfully
+
+    LessonsListResponse:
+      type: object
+      properties:
+        lessons:
+          type: array
+          items:
+            $ref: '#/components/schemas/Lesson'
+
+    CreateLessonResponse:
+      type: object
+      properties:
+        lesson:
+          $ref: '#/components/schemas/Lesson'
+
+    CreateUserResponse:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          example: newuser@example.com
+        pictureUrl:
+          type: string
+          example: https://example.com/avatar.png
+        isAdmin:
+          type: boolean
+          example: false
+
+    # Entity Schemas
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique course identifier
+          example: 1
+        seqNo:
+          type: integer
+          description: Sequence number for ordering
+          example: 10
+        url:
+          type: string
+          description: URL slug for the course
+          example: typescript-bootcamp
+        title:
+          type: string
+          description: Course title
+          example: Typescript Bootcamp
+        iconUrl:
+          type: string
+          description: URL to the course icon
+          example: https://example.com/icon.jpg
+        longDescription:
+          type: string
+          description: Detailed course description
+          example: Learn TypeScript in depth...
+        category:
+          type: string
+          description: Course category
+          example: BEGINNER
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation timestamp
+          example: '2024-01-15T10:30:00.000Z'
+        lastUpdatedAt:
+          type: string
+          format: date-time
+          description: Last update timestamp
+          example: '2024-01-15T10:30:00.000Z'
+
+    CourseWithLessons:
+      allOf:
+        - $ref: '#/components/schemas/Course'
+        - type: object
+          properties:
+            lessons:
+              type: array
+              items:
+                $ref: '#/components/schemas/Lesson'
+
+    Lesson:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique lesson identifier
+          example: 1
+        title:
+          type: string
+          description: Lesson title
+          example: Introduction to TypeScript
+        duration:
+          type: string
+          description: Lesson duration in mm:ss format
+          example: '10:30'
+        seqNo:
+          type: integer
+          description: Sequence number for ordering within course
+          example: 1
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation timestamp
+          example: '2024-01-15T10:30:00.000Z'
+        lastUpdatedAt:
+          type: string
+          format: date-time
+          description: Last update timestamp
+          example: '2024-01-15T10:30:00.000Z'
+
+    UserInfo:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          description: User's email address
+          example: test@angular-university.io
+        pictureUrl:
+          type: string
+          description: URL to user's profile picture
+          example: https://example.com/avatar.png
+        isAdmin:
+          type: boolean
+          description: Whether the user has admin privileges
+          example: false
+
+    # Error Schemas
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - fail
+          example: fail
+        message:
+          type: string
+          description: Error message
+          example: Email is required
+
+    NotFoundResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message
+          example: Could not find a course with id 999
+
+    InternalErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - error
+          example: error
+        message:
+          type: string
+          example: Internal Server Error
+
