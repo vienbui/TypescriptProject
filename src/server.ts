@@ -4,8 +4,13 @@ import * as dotenv from 'dotenv';
 const result = dotenv.config();
 
 if (result.error) {
-    console.warn("No .env file found or error in loading .env file");
-    process.exit(1);
+    // In Docker, env vars come from docker-compose.yml, not .env file
+    // Only exit if critical env vars are missing
+    if (!process.env.DB_HOST || !process.env.DB_NAME) {
+        console.error("Missing required environment variables (DB_HOST, DB_NAME)");
+        process.exit(1);
+    }
+    console.log("No .env file found, using environment variables from system/Docker");
 }
 
 import "reflect-metadata";

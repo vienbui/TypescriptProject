@@ -16,7 +16,7 @@ try {
         throw new Error (`Invalid course Id ${courseId}`)
      }
 
-     AppDataSource.manager.transaction(
+     await AppDataSource.manager.transaction(
         async (transactionalEntityManager) => {
 
             await transactionalEntityManager

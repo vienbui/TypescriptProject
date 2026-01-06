@@ -21,7 +21,7 @@ export function checkIfAuthenticated(request: Request, response: Response, next:
     token = authJwtToken.substring("Bearer ".length);
   }
 
-    checkJwtValidity(authJwtToken)
+    checkJwtValidity(token)
         .then((user) => {
             logger.info(`Autentication JWT successfully decoded: ${user}`);
 

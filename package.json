@@ -10,7 +10,11 @@
     "run-populate-db-script": "node dist/database/populate-db.js",
     "populate-db": "npm-run-all clean build run-populate-db-script",
     "run-delete-db-script": "node dist/database/delete-db.js",
-    "delete-db": "npm-run-all clean build run-delete-db-script"
+    "delete-db": "npm-run-all clean build run-delete-db-script",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:verbose": "jest --verbose"
   },
   "author": "",
   "license": "MIT",
@@ -28,8 +32,14 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/pg": "^8.16.0",
+    "@types/supertest": "^6.0.3",
+    "jest": "^29.7.0",
     "npm-run-all": "^4.1.5",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.6",
     "tsc-watch": "^7.2.0"
   }
 }
