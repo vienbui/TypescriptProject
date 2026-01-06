@@ -33,6 +33,7 @@ import { createUser } from './route/create-user';
 import { login } from './route/login';
 import { checkIfAuthenticated } from './middlewares/authentication-middleware';
 import { checkIfAdmin } from './middlewares/authentication-admin-only-middleware';
+import { requestLogger } from './middlewares/request-logger';
 
 
 // const cors = require ("cors")
@@ -45,6 +46,9 @@ function setupExpress(){
     
     app.use(bodyParser.json());
     app.use(express())
+    
+    // Add request logging middleware - logs all incoming requests
+    app.use(requestLogger);
 
     app.route("/").get(root);
 
@@ -93,23 +97,28 @@ function startServer(){
         port = 9000;
     }
     app.listen(port,()=>{
-        logger.info (`Server is running on http://localhost:${port}`);
+        logger.info(`Server is running on http://localhost:${port}`);
     
     })
 }
-console.log('DB_PASSWORD =', process.env.DB_PASSWORD);
-        console.log('DB_USERNAME =', process.env.DB_USERNAME);
 
 AppDataSource.initialize()
     .then(()=>{
-        logger.info("Data Source has been initialized!");
+        logger.info("Database connection established successfully", {
+            host: process.env.DB_HOST,
+            database: process.env.DB_NAME,
+        });
         setupExpress();
         startServer();
     
 
     })
     .catch((error)=> {
-        logger.error("Error during Data Source initialization", error);
+        logger.error("Error during Data Source initialization", {
+            error: error.message,
+            host: process.env.DB_HOST,
+            database: process.env.DB_NAME,
+        });
         
 
     });

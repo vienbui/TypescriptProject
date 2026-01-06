@@ -4,7 +4,8 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const jwt=require("jsonwebtoken");
 
 export function checkIfAuthenticated(request: Request, response: Response, next: NextFunction) {
-    console.log(">>> checkIfAuthenticated HIT");
+    const requestId = request['requestId'];
+    logger.debug("Authentication middleware invoked", { requestId, path: request.path });
 
     const authJwtToken = request.headers.authorization;
 
@@ -42,7 +43,7 @@ async function checkJwtValidity (authJwtToken: string) {
     
     authJwtToken = authJwtToken.trim();
 
-    logger.info(`Found user details in JWT', user`);
+    logger.debug("Found user details in JWT", { userId: user.userID, email: user.email });
 
     return user;
 }
