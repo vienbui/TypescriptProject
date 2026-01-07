@@ -3,9 +3,9 @@ import { logger } from '../logger';
 import { AppDataSource } from '../database/data-source';
 
 export async function getAllCourses(request: Request, response: Response, next: NextFunction) {
-    console.log(">>> getAllCourses HIT");
+    const requestId = request['requestId'];
 try {
-    logger.debug("getAllCourses called", request["user"]);
+    logger.debug("getAllCourses called", { requestId, userId: request["user"]?.userID });
 
     const courses = await AppDataSource
         .getRepository('Course')
@@ -26,7 +26,6 @@ try {
     })
 
 } catch (error) {
-    logger.error("Error in getAllCourses", error);
-    response.status(500).json({error: "Internal Server Error"});
+    logger.error("Error in getAllCourses", { requestId, error: error.message, stack: error.stack });
     return next(error);
 }}

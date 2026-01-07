@@ -25,15 +25,16 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install only production dependencies
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy built files from builder stage
 COPY --from=builder /app/dist ./dist
+
+# Create logs directory
+RUN mkdir -p logs
 
 # Expose port (default 9000)
 EXPOSE 9000
 
 # Start the server
 CMD ["node", "dist/server.js"]
-
-

@@ -4,18 +4,20 @@ import { AppDataSource } from '../database/data-source';
 import {Course} from '../entitites/course';
 
 export async function createCourse(request: Request, response: Response, next: NextFunction) {
+    const requestId = request['requestId'];
 
 try {
-    logger.debug("createCourse() called");
+    logger.debug("createCourse() called", { requestId, userId: request['user']?.userID });
 
     const data = request.body;
 
     if (!data){
+       logger.warn("Course creation failed - no data provided", { requestId });
        throw  new Error (`No data available, cannot save course`);
 
     }
 
-    const savedCourse = await AppDataSource.manager.transaction (
+    const savedCourse = await AppDataSource.manager.transaction<Course>(
         "REPEATABLE READ", 
         async (transactionalEntityManager) => {
 
@@ -27,22 +29,23 @@ try {
                 .select("MAX(courses.seqNo)", "max")
                 .getRawOne();
 
-           const newCourse = repository
-                .create({
+           const courseData: Partial<Course> = {
                     ...data, //Object spead operator ( create a copy of data),
-                      seqNo: ( result?.max ?? 0 ) + 1 // result maybe empty => use optinal chaining and null coalescing to have dafault value
-                })
+                    seqNo: ( result?.max ?? 0 ) + 1 // result maybe empty => use optinal chaining and null coalescing to have dafault value
+           };
+           const newCourse = repository.create(courseData);
 
-            await repository.save(newCourse) ;
+            await repository.save(newCourse);
 
             return newCourse; // to make course is available outside of transaction so that we can use it in response json
         }
     );
+       logger.info("Course created successfully", { requestId, courseId: savedCourse.id, title: data.title });
        response.status(201).json({savedCourse})
        
 
 }
 catch (error) {
-    logger.error("Error in createCourse", error);
+    logger.error("Error in createCourse", { requestId, error: error.message, stack: error.stack });
     return next(error);
 }}
