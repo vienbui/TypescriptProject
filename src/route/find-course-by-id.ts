@@ -21,7 +21,6 @@ try {
             id: courseId
         })
  
-
     if (!course){
         const message = `Could not find a course with id ${courseId}`;
             logger.error(message);
