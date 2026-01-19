@@ -14,20 +14,21 @@ if (!JWT_SECRET) {
 export async function login(request: Request, response: Response, next: NextFunction) {
 
 try {
-    logger.debug("login() called");
+    const requestId = request['requestId'];
+    logger.debug("login() called", { requestId });
 
     const {email, password} = request.body;
 
    if (!email) {
+    logger.warn("Login attempt failed - email missing", { requestId: request['requestId'] });
     return response.status(400).json({
         status: "fail",
         message: "Email is required"
     })
    }
-   console.log("JWT_SECRET =", process.env.JWT_SECRET);
-
 
    if (!password) {
+    logger.warn("Login attempt failed - password missing", { requestId: request['requestId'], email });
     return response.status(400).json({
         status: "fail",
         message: "password is required"
@@ -41,6 +42,7 @@ try {
     .getOne();
 
    if (!user) {
+    logger.warn("Login attempt failed - user not found", { requestId: request['requestId'], email });
     return response.status(403).json({
         status: "fail",
         message: `Invalid email or password. Login denied with email ${email}.`
@@ -51,13 +53,14 @@ try {
 
    // compare the password hash that user input with the user's password hash in the database
    if (passwordHash !== user.passwordHash) {
+    logger.warn("Login attempt failed - invalid password", { requestId: request['requestId'], email });
     return response.status(403).json({
         status: "fail",
         message: `Invalid password for email ${email}.`
     })
    }
 
-   logger.info(`Login successful for email ${email}.`);
+   logger.info("Login successful", { requestId: request['requestId'], email, userId: user.id });
 
    const {pictureUrl, isAdmin} = user;
 
@@ -81,7 +84,7 @@ try {
    return;
 }
 catch (error) {
-    logger.error("Error in login", error);
+    logger.error("Error in login", { requestId: request['requestId'], error: error.message, stack: error.stack });
     return next(error);
 }
 }
